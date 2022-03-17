@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -5,12 +6,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main_first_app/css/main.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    {% block content %}
+    <aside> <!-- Боковая панель -->
+        <img src="{% static 'main_first_app/img/image_1.png' %}" alt="logo">
+        <span class="logo">frontjus</span>
+        <h4>Навигация</h4>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="bi bi-house-door-fill"></i>Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="bi bi-building"></i>О нас</li></a>
+            <a href=""><li><i class="bi bi-person-lines-fill"></i>Контакты</li></a>
+        </ul>
+    </aside>
+    <main>  <!-- Основная панель -->
+        {% block content %}
+        {% endblock %}
+        {% include 'main_first_app/include_test_file.html' %}
+    </main>
 
-    {% endblock %}
-    {% include 'main_first_app/include_test_file.html' %}
 </body>
 </html>
