@@ -14,12 +14,13 @@
 <body>
     <aside> <!-- Боковая панель -->
         <img src="{% static 'main_first_app/img/image_1.png' %}" alt="logo">
-        <span class="logo">frontjus</span>
+       <span class="logo"> <a href="{% url 'home' %}">frontjus</a></span>
         <h4>Навигация</h4>
         <ul>
-            <a href="{% url 'home' %}"><li><i class="bi bi-house-door-fill"></i>Главная</li></a>
-            <a href="{% url 'about' %}"><li><i class="bi bi-building"></i>О нас</li></a>
-            <a href="{% url 'contacts' %}"><li><i class="bi bi-person-lines-fill"></i>Контакты</li></a>
+            <a href="{% url 'home' %}"><li><i class="bi bi-house-door-fill"></i>     Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="bi bi-building"></i>     О нас</li></a>
+            <a href="{% url 'contacts' %}"><li><i class="bi bi-person-lines-fill"></i>     Контакты</li></a>
+            <a href="{% url 'news_home' %}"><li><i class="bi bi-newspaper"></i>     Новости</li></a>
         </ul>
     </aside>
     <main>  <!-- Основная панель -->
